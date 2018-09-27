@@ -5,6 +5,8 @@ import { Router, Scene, Stack, Tabs, ActionConst } from 'react-native-router-flu
 import { connect, Provider } from 'react-redux'
 import configureStore from './stores/store'
 import Jobs from './components/jobs/jobs'
+import Login from './components/users/login'
+
 const store = configureStore()
 export {store}
 const RouterWithRedux = connect()(Router)
@@ -21,7 +23,7 @@ export default class App extends Component {
           <RouterWithRedux>
             <Stack key="root" navigationBarStyle={{ backgroundColor: '#fff' }}
                 titleStyle={{ color: '#586069', alignSelf: 'center' }}>
-                <Scene key="jobs" component={Jobs} title="Jobs" initial/>
+                <Scene key="jobs" component={Login} title="Jobs" initial/>
             </Stack>
           </RouterWithRedux>
         </View>

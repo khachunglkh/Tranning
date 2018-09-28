@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import {View, Text, TouchableOpacity,TextInput} from 'react-native';
+import {View, Text, TouchableOpacity,TextInput, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { connect } from 'react-redux';
+import { loginRequest } from '../../ducks/users';
+import { Actions } from 'react-native-router-flux';
+
 const emailIcon = (<Icon name="envelope" size={20} color="rgb(132,141,140)" />);
 const passwordIcon = (<Icon name="lock" size={30} color="rgb(132,141,140)" />);
-export default class Login extends Component {
+class Login extends Component {
   constructor(props){
     super(props);
     this.state={
@@ -41,11 +45,17 @@ export default class Login extends Component {
             <TouchableOpacity
               style={{ padding: 10, margin: 10, width: 250, height: 45, borderRadius: 10, backgroundColor:'rgb(250,129,63)' }}
               onPress={()=>{
+
                 const {email, password} = this.state;
+
                 if(!email.length || !password.length){
-                  alert('Vui lòng điền email và mật khẩu');
+                  Alert.alert('Vui lòng điền email và mật khẩu');
                   return;
                 }
+                // Actions.jobs();
+                if(this.props.isLogin) Actions.jobs();
+                 else Alert.alert('Email hoặc mật khẩu không đúng');
+                this.props.onLoginAction({email : email, password: password});
 
               }}
             >
@@ -60,3 +70,16 @@ export default class Login extends Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  return{
+    isLogin: state.isLogin,
+  };
+}
+const mapDispatchToProps = (dispatch) => {
+  return{
+    onLoginAction:  (user) =>{
+      dispatch(loginRequest(user));
+    }
+  }
+}
+export default connect (mapStateToProps,mapDispatchToProps)(Login);

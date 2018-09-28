@@ -3,40 +3,52 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#ebebeb'
+        backgroundColor: 'rgb(244,244,244	)'
     },
     item: {
         flex: 1,
         flexDirection: 'row',
         marginTop: 5,
         backgroundColor: '#fff',
-        padding: 10,
+        paddingHorizontal: 10,
     },
     avatar: {
-        flex: 1,
+        flex: 0.7,
+        paddingRight: 10,
+        justifyContent: 'center',
+        alignSelf: 'center'
     },
     info: {
-        flex: 2,
+        flex: 3,
         justifyContent: 'space-around',
         flexDirection: 'column',
+        paddingVertical: 10,
+        borderRightWidth: 1,
+        borderLeftWidth: 1,
+        borderColor: 'rgb(244,244,244	)',
 
     },
     infoMeta: {
-        flex: 1,
+        flex: 0.5,
         justifyContent: 'space-around',
         flexDirection: 'column',
+        paddingVertical: 10,
+        paddingLeft: 10,
+
+        // backgroundColor: 'blue'
     },
     image: {
-        width: 80,
-        height: 80,
-        borderRadius: 80/2,
+        // width: 50,
+        height: 35,
+
         resizeMode: 'stretch',
-        flex: 1,
-        justifyContent: 'center',
+
+        justifyContent: 'space-around',
     },
     name:{
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: 'bold',
+        color: 'rgb(234,109,57)'
     }
 
 });

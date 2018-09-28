@@ -5,8 +5,9 @@ import * as api from '../api/indexAxios'
 
 function * fetchJobs(action) {
   try {
-    const response = yield call(api.getJobs)
+    const response = yield call(api.getJobs,action.payload)
     if (response.result == true) {
+      yield console.log ('hello job', response)
       yield put(actions.fetchJobsSuccessAction({
         jobs: response.data.jobs
       }))

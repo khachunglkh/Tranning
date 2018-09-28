@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
 import {
-    Text, View, Image
+    Text, View, Image, TouchableOpacity
 } from 'react-native';
 import { connect } from 'react-redux'
 import styles from './styles'
+import { Actions } from 'react-native-router-flux';
+import { fetchDetailsAction } from '../../ducks/details'
 
 class Job extends Component{
     render(){
         return(
+          <TouchableOpacity
+            onPress={ ()=>
+              {Actions.jobdetail({
+                _id: this.props.item._id,
+              })
+            }
+
+            }
+          >
             <View style={styles.item}>
               <View style={styles.avatar}>
                 <Image
@@ -25,8 +36,11 @@ class Job extends Component{
                 <Text style={{textAlign: 'center',  color: 'rgb(234,109,57)'}}>12 km</Text>
               </View>
             </View>
+            </TouchableOpacity>
         )
     }
 }
 
-export default Job;
+
+
+export default Job

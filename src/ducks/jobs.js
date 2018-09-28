@@ -6,6 +6,7 @@ export const fetchJobsAction = createAction(constants.FETCH_JOBS)
 export const fetchJobsSuccessAction = createAction(constants.FETCH_JOBS_SUCCEEDED)
 export const fetchJobsFailedAction = createAction(constants.FETCH_JOBS_FAILED)
 
+
 const initJobsState = {
   totalPages: 0,
   jobs: [],

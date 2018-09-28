@@ -6,6 +6,7 @@ import { connect, Provider } from 'react-redux'
 import configureStore from './stores/store'
 import Jobs from './components/jobs/jobs'
 import Login from './components/users/login'
+import JobDetail from './components/jobs/job-detail'
 
 const store = configureStore()
 export {store}
@@ -23,8 +24,9 @@ export default class App extends Component {
           <RouterWithRedux>
             <Stack key="root" navigationBarStyle={{ backgroundColor: '#fff' }}
                 titleStyle={{ color: '#586069', alignSelf: 'center' }}>
-                <Scene key="jobs" component={Jobs} title="Jobs" back="true"/>
-                <Scene key="login" component={Login} title="Login" initial/>
+                <Scene key="jobs" component={Jobs}  back="true"/>
+                <Scene key="login" component={Jobs}  initial/>
+                <Scene key="jobdetail" component={JobDetail}  backTitle=" "	backButtonTintColor="rgb(236,98,52)"	/>
             </Stack>
           </RouterWithRedux>
         </View>

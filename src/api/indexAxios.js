@@ -68,3 +68,6 @@ function sendPost(url, data) {
 export function getJobs() {
   return get(`/client/searchs?page=1`)
 }
+export function getDetails(id) {
+  return get(`/client/jobs/`+id)
+}

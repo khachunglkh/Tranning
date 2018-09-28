@@ -11,7 +11,9 @@ import { connect } from 'react-redux';
 import styles from './styles'
 import _ from 'lodash'
 import { fetchJobsAction } from '../../ducks/jobs'
+import { fetchDetailsAction } from '../../ducks/details'
 import Job from './job';
+
 
 class Jobs extends Component {
   constructor(props) {
@@ -21,12 +23,14 @@ class Jobs extends Component {
   componentDidMount() {
     if (this.props.token) {
       this.props.fetchJobsAction()
+      this.props.fetchDetailsAction()
     }
   }
 
   componentDidUpdate(prevProps, prevState, snapshot){
     if (prevProps.token != this.props.token) {
       this.props.fetchJobsAction()
+      // this.props.fetchDetailsAction()
     }
   }
 
@@ -35,6 +39,11 @@ class Jobs extends Component {
     if (_.isEmpty(jobs)) {
       return null
     }
+    // const { details } = this.props.details
+    // if (_.isEmpty(details)) {
+    //   return null
+    // }
+
 
     return(
       <View style={styles.container}>
@@ -43,8 +52,11 @@ class Jobs extends Component {
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item, index }) => {
             return (
-              <Job item={item} index={index}>
-              </Job>
+
+                <Job item={item} index={index}>
+                </Job>
+
+
             );
           }}
         >
@@ -56,14 +68,17 @@ class Jobs extends Component {
 
 function mapStateToProps(state) {
   const { jobs } = state.job
+  // const { details } = state.detail
   return {
+    details: state.detail.details,
     jobs: jobs,
     token: state.user.token
   };
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchJobsAction: () => dispatch(fetchJobsAction())
+  fetchJobsAction: () => dispatch(fetchJobsAction()),
+  fetchDetailsAction: () => dispatch(fetchDetailsAction())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Jobs);

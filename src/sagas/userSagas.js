@@ -16,9 +16,28 @@ function* tokenRequest(action) {
   }
 }
 
+function* loginRequest(action) {
+
+  try {
+    const response = yield call(api.loginRequest,action.payload)
+    yield console.log('response',response)
+    if (response.result == true) {
+      yield console.log('login thanh cong')
+      yield put(actions.loginSucceeded({}))
+    } else {
+      yield put(actions.loginFailed({}))
+      yield console.log('login that bai 1')
+    }
+  }
+  catch (e){
+    yield console.log(e)
+    yield put(actions.loginFailed({}))
+  }
+}
 
 export default function* diarySaga() {
   yield all([
-    takeLatest(constants.TOKEN_REQUEST, tokenRequest)
+    takeLatest(constants.TOKEN_REQUEST, tokenRequest),
+    takeLatest(constants.LOGIN_REQUEST, loginRequest)
   ]);
 }

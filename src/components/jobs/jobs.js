@@ -35,7 +35,7 @@ class Jobs extends Component {
     if (_.isEmpty(jobs)) {
       return null
     }
-    
+
     return(
       <View style={styles.container}>
         <FlatList

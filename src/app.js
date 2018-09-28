@@ -23,7 +23,7 @@ export default class App extends Component {
           <RouterWithRedux>
             <Stack key="root" navigationBarStyle={{ backgroundColor: '#fff' }}
                 titleStyle={{ color: '#586069', alignSelf: 'center' }}>
-                <Scene key="jobs" component={Login} title="Jobs" initial/>
+                <Scene key="jobs" component={Jobs} title="Jobs" initial/>
             </Stack>
           </RouterWithRedux>
         </View>

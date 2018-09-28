@@ -52,11 +52,13 @@ class Login extends Component {
                   Alert.alert('Vui lòng điền email và mật khẩu');
                   return;
                 }
-                // Actions.jobs();
-                if(this.props.isLogin) Actions.jobs();
-                 else Alert.alert('Email hoặc mật khẩu không đúng');
-                this.props.onLoginAction({email : email, password: password});
-
+                else{
+                  this.props.onLoginAction({email : email, password: password});
+                  setTimeout(() => {
+                    if(this.props.isLogin) Actions.jobs()
+                  else Alert.alert('Email hoặc mật khẩu không đúng')
+                },500)
+                }
               }}
             >
               <Text style={{color: 'white', textAlign: 'center', fontWeight: 'bold'}}>
@@ -72,7 +74,7 @@ class Login extends Component {
 }
 const mapStateToProps = (state) => {
   return{
-    isLogin: state.isLogin,
+    isLogin: state.user.isLogin,
   };
 }
 const mapDispatchToProps = (dispatch) => {

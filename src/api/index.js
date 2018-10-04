@@ -1,5 +1,6 @@
 import * as url from './baseAPI'
 import config from '../constants/config'
+import authenticityToken from './authenticityToken'
 
 export function* tokenRequest() {
   const response = yield fetch(url.TOKEN_REQUEST, {
@@ -9,6 +10,7 @@ export function* tokenRequest() {
       'Content-type': 'application/json',
       'app-version': `${config.appVersion}`,
       'secret-key': `${config.secretKey}`,
+
     }
   })
   yield console.log('token', JSON.stringify(response))
@@ -24,6 +26,7 @@ export function* loginRequest(user) {
       'Content-type': 'application/json',
       'app-version': `${config.appVersion}`,
       'secet-key': `${config.secretKey}`,
+      'Authorization': `${authenticityToken()}`
     },
     body: JSON.stringify({
       email: `${user.email}`,

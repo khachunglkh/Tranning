@@ -13,6 +13,7 @@ import _ from 'lodash'
 import { fetchJobsAction } from '../../ducks/jobs'
 import Job from './job';
 
+
 class Jobs extends Component {
   constructor(props) {
     super(props)
@@ -43,8 +44,11 @@ class Jobs extends Component {
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item, index }) => {
             return (
-              <Job item={item} index={index}>
-              </Job>
+
+                <Job item={item} index={index}>
+                </Job>
+
+
             );
           }}
         >

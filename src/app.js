@@ -7,28 +7,31 @@ import configureStore from './stores/store'
 import Jobs from './components/jobs/jobs'
 import Login from './components/users/login'
 import JobDetail from './components/jobs/job-detail'
+import Home from './components/homes/home'
 
 const store = configureStore()
 export {store}
-const RouterWithRedux = connect()(Router)
+// const RouterWithRedux = connect()(Router)
 
 export default class App extends Component {
   constructor(props) {
     super(props)
     store.dispatch(tokenRequestAction())
   }
+
   render() {
     return(
       <Provider store={store}>
         <View style={{flex: 1}}>
-          <RouterWithRedux>
+          <Router>
             <Stack key="root" navigationBarStyle={{ backgroundColor: '#fff' }}
                 titleStyle={{ color: '#586069', alignSelf: 'center' }}>
                 <Scene key="jobs" component={Jobs}  back="true"/>
-                <Scene key="login" component={Jobs}  initial/>
+                <Scene key="login" component={Login}  />
                 <Scene key="jobdetail" component={JobDetail}  backTitle=" "	backButtonTintColor="rgb(236,98,52)"	/>
+                <Scene key="home" component={Home} initial />
             </Stack>
-          </RouterWithRedux>
+          </Router>
         </View>
        </Provider>
     )

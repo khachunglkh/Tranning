@@ -1,0 +1,45 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "HMACAlgorithm"
+provides-nominal:
+- "3JWT13HMACAlgorithmO"
+provides-member:
+- ["3JWT13HMACAlgorithmO", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "=="
+- !private "FloatLiteralType"
+- "HMACAlgorithm"
+- !private "IntegerLiteralType"
+depends-member:
+- ["SQ", ""]
+- ["SQ", "hash"]
+- ["SQ", "hashValue"]
+- ["3JWT13HMACAlgorithmO", "__derived_enum_equals"]
+- ["3JWT13HMACAlgorithmO", "deinit"]
+- ["3JWT13HMACAlgorithmO", "hash"]
+- ["3JWT13HMACAlgorithmO", "hashValue"]
+- ["3JWT13HMACAlgorithmO", "sha256"]
+- ["3JWT13HMACAlgorithmO", "sha384"]
+- ["3JWT13HMACAlgorithmO", "sha512"]
+- ["SH", ""]
+- ["SH", "hash"]
+- ["SH", "hashValue"]
+- !private ["s6HasherV", "combine"]
+depends-nominal:
+- "SQ"
+- "3JWT13HMACAlgorithmO"
+- "SH"
+- !private "s6HasherV"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/windows/Workspace/react-native/Tranning1/ios/build/Build/Intermediates.noindex/JWT.build/Debug-iphonesimulator/JWT-iOS.build/unextended-module.modulemap"
+- "/Users/windows/Workspace/react-native/Tranning1/ios/JSONWebToken.swift-master/CommonCrypto/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/usr/include/Darwin.apinotes"
+interface-hash: "b6909a2b4a45af7889ae1a0ead36bd6e"

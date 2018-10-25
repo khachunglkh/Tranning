@@ -4,7 +4,7 @@ import * as actions from '../ducks/details'
 import * as api from '../api/indexAxios'
 
 function * fetchDetails(action) {
-  console.log('action',action)
+  yield console.log('action',api.getDetails)
   try{
     console.log('Hello')
     const response = yield call(api.getDetails,action.payload)

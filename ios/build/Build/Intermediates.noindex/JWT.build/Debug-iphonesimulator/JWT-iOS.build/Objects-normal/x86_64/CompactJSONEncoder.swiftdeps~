@@ -1,0 +1,38 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "CompactJSONEncoder"
+provides-nominal:
+- "3JWT18CompactJSONEncoderC"
+provides-member:
+- ["3JWT18CompactJSONEncoderC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "CompactJSONEncoder"
+- "Data"
+- "Encodable"
+- "JSONEncoder"
+- !private "JSONSerialization"
+- "String"
+- !private "base64encode"
+depends-member:
+- ["3JWT18CompactJSONEncoderC", "Data"]
+- ["3JWT18CompactJSONEncoderC", "Encodable"]
+- !private ["3JWT18CompactJSONEncoderC", "JSONSerialization"]
+- ["3JWT18CompactJSONEncoderC", "String"]
+- !private ["3JWT18CompactJSONEncoderC", "base64encode"]
+- ["3JWT18CompactJSONEncoderC", "encodeString"]
+- ["3JWT18CompactJSONEncoderC", "init"]
+depends-nominal:
+- "3JWT18CompactJSONEncoderC"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/windows/Workspace/react-native/Tranning1/ios/build/Build/Intermediates.noindex/JWT.build/Debug-iphonesimulator/JWT-iOS.build/unextended-module.modulemap"
+- "/Users/windows/Workspace/react-native/Tranning1/ios/JSONWebToken.swift-master/CommonCrypto/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.0.sdk/usr/include/Darwin.apinotes"
+interface-hash: "3b95b1c304ff024886cd8621435aa3cb"

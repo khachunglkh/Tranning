@@ -2,6 +2,7 @@ import { put, call, takeLatest, select, all } from 'redux-saga/effects';
 import constants from '../constants'
 import * as actions from '../ducks/users'
 import * as api from '../api'
+import * as api1 from '../api/indexAxios'
 
 function* tokenRequest(action) {
   try {
@@ -17,7 +18,7 @@ function* tokenRequest(action) {
 }
 
 function* loginRequest(action) {
-
+  yield console.log('api', api1.postLogin)
   try {
     const response = yield call(api.loginRequest,action.payload)
     yield console.log('response',response)
@@ -30,7 +31,7 @@ function* loginRequest(action) {
     }
   }
   catch (e){
-    yield console.log(e)
+    yield console.log('error',e.response)
     yield put(actions.loginFailed({}))
   }
 }

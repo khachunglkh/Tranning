@@ -63,7 +63,9 @@ function sendPost(url, data) {
     }
   })
 }
-
+export function postLogin(){
+  return sendPost(`/auth/login`, { email: 'Marlon', password: 'Bernardes' })
+}
 
 export function getJobs() {
   return get(`/client/searchs?page=1`)
